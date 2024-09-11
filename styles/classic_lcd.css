@@ -1,0 +1,18 @@
+@font-face {
+    font-family: 'Digital';
+    src: url('Digital.otf') format('opentype');
+}
+body {
+    font-family: Digital;
+    color: #343334;
+    text-align: center;
+    background-color: #7d8c76;
+    width: 250px;
+}
+#clock {
+    font-size: 48px;
+    font-weight: bold;
+}
+#date {
+    font-size: 18px;
+}

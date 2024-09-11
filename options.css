@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Digital';
+    src: url('styles/Digital.otf') format('opentype');
+}
+body {
+    width: 500px;
+}
+button {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.white {
+    color: white;
+    font-family: Digital;
+    font-size: 30px;
+}
+.red {
+    color: red;
+    font-family: Digital;
+    font-size: 30px;
+}
+.lime_green {
+    color: limegreen;
+    font-family: Digital;
+    font-size: 30px;
+}
+.classic_lcd {
+    color: #343334 !important;
+    background-color: #7d8c76 !important;
+    font-family: Digital;
+    font-size: 30px;
+}
+.lcd {
+    color: #343334 !important;
+    background-color: #7d8c76;
+}
+.black-txt {
+    color: black;
+    background-color: white;
+}
+.black {
+    color: black;
+    font-family: Digital;
+    font-size: 30px;
+    background-color: white;
+}
+.white_red {
+    color: red;
+    font-family: Digital;
+    font-size: 30px;
+    background-color: white;
+}
+.white_lime_green {
+    color: limegreen;
+    font-family: Digital;
+    font-size: 30px;
+    background-color: white;
+}
+.white_arial {
+    color: black;
+    font-family: Arial;
+    font-size: 25px;
+    background-color: white;
+}
