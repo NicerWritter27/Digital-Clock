@@ -1,12 +1,48 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Simple Digital Clock</title>
-        <link id="stylesheet-link" rel="stylesheet" href="styles/black_lime_green.css">
-    </head>
-    <body>
+
+<head>
+    <title>Simple Digital Clock</title>
+    <link id="stylesheet-link" rel="stylesheet" href="styles/black_lime_green.css">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <style>
+        #clock-wrapper {
+            position: relative;
+        }
+        
+        .popup-control {
+            position: absolute;
+            padding: 6px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.18s ease;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        #clock-wrapper:hover .popup-control {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        #clock-wrapper.controls-visible-temporary .popup-control {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    </style>
+
+    <div id="clock-wrapper">
         <div id="clock"></div>
         <div id="date"></div>
-        <script src="script.js"></script>
-    </body>
+        <button id="inject-btn" class="icon-inject popup-control" title="Pin clock to page">📌</button>
+        <button id="open-options-window" class="icon-gear popup-control" aria-label="Open options" title="Open options in window">⚙</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
 </html>

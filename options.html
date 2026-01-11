@@ -1,22 +1,101 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>My Extension Options</title>
-        <link rel="stylesheet" href="options.css">
-    </head>
-    <body>
-        <h2>Change the clock style</h2>
-        <button id="style1-button">White<p class="white">3:00 PM</p></button>
-        <button id="style2-button">Red<p class="red">3:00 PM</p></button>
-        <button id="style3-button">Lime Green<p class="lime_green">3:00 PM</p></button>
-        <button id="style4-button" class="lcd">Classic LCD<p class="classic_lcd">3:00 PM</p></button><br><br>
-        <!--I needed this space-->
-        <button id="style5-button" class="black-txt">Black<p class="black">3:00 PM</p></button>
-        <button id="style6-button" class="black-txt">Red<p class="white_red">3:00 PM</p></button>
-        <button id="style7-button" class="black-txt">Lime Green<p class="white_lime_green">3:00 PM</p></button>
-        <button id="style8-button" class="black-txt">Arial Font<p class="white_arial">3:00 PM</p></button><br><br>
-        <input type="checkbox" id="include-date-checkbox">
-        <label for="include-date-checkbox"><strong>Include Date</strong></label><br>
-        <script src="options.js"></script>
-    </body>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Clock — Options</title>
+    <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+    <main class="card">
+        <header class="card-header">
+            <h2>Change the clock style</h2>
+            <p class="muted">Choose a visual style for the extension clock.</p>
+        </header>
+
+        <div class="options-layout">
+            <section class="styles-grid">
+                <button id="style1-button" class="style-button">White<span class="preview white">3:00 PM</span></button>
+                <button id="style2-button" class="style-button">Red<span class="preview red">3:00 PM</span></button>
+                <button id="style3-button" class="style-button">Lime Green<span class="preview lime_green">3:00 PM</span></button>
+                <button id="style4-button" class="style-button lcd">LCD<span class="preview classic_lcd">3:00 PM</span></button>
+                <button id="style5-button" class="style-button black-txt">Black<span class="preview black">3:00 PM</span></button>
+                <button id="style6-button" class="style-button black-txt">Red<span class="preview white_red">3:00 PM</span></button>
+                <button id="style7-button" class="style-button black-txt">Lime Green<span class="preview white_lime_green">3:00 PM</span></button>
+                <button id="style8-button" class="style-button black-txt">Arial<span class="preview white_arial">3:00 PM</span></button>
+            </section>
+
+            <aside class="options-panel">
+                <h3 class="panel-title">Options</h3>
+
+                <div class="panel-row">
+                    <span class="toggle-label">Include date</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="include-date-checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="panel-row">
+                    <span class="toggle-label">Add border</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="add-border-checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="panel-row">
+                    <span class="toggle-label">Hide seconds</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="hide-seconds-checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="panel-row">
+                    <span class="toggle-label">Hide AM/PM</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="hide-ampm-checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="panel-row">
+                    <span class="toggle-label">24-hour format</span>
+                    <label class="toggle">
+                        <input type="checkbox" id="use-24h-checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="panel-row range-row">
+                    <label for="time-size" class="range-label">Time size</label>
+                    <div class="range-control">
+                        <input id="time-size" type="range" min="18" max="72" step="1">
+                        <span id="time-size-value" class="range-value"></span>
+                    </div>
+                </div>
+
+                <div class="panel-row range-row">
+                    <label for="date-size" class="range-label">Date size</label>
+                    <div class="range-control">
+                        <input id="date-size" type="range" min="10" max="36" step="1">
+                        <span id="date-size-value" class="range-value"></span>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        <footer class="card-footer">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                <p class="muted">Changes are saved automatically.</p>
+                <button id="reset-options" class="reset-btn">Reset to defaults</button>
+            </div>
+        </footer>
+    </main>
+
+    <script src="options.js"></script>
+</body>
+
 </html>

@@ -2,64 +2,344 @@
     font-family: 'Digital';
     src: url('styles/Digital.otf') format('opentype');
 }
+
+.root,
+html,
 body {
-    width: 500px;
+    height: 100%;
 }
-button {
-    background-color: black;
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: linear-gradient(180deg, #f6f7fb, #eef2f6);
+    color: #0f1720;
+    -webkit-font-smoothing: antialiased;
+    padding: 20px;
+    box-sizing: border-box;
+    min-width: 880px;
+}
+
+.card {
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 6px 18px rgba(16, 24, 40, 0.08);
+}
+
+body::after {
+    content: '';
+    display: block;
+    height: 12px;
+}
+
+.card-header h2 {
+    margin: 0 0 6px 0;
+}
+
+.muted {
+    color: #546070;
+    margin: 0 0 12px 0;
+    font-size: 13px
+}
+
+.styles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.options-layout {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 18px;
+    align-items: start;
+}
+
+.options-panel {
+    background: transparent;
+    border: none;
+    padding: 0 6px 0 6px;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.panel-title {
+    margin: 0 0 6px 0;
+    font-size: 14px
+}
+
+.panel-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 6px 0;
+}
+
+.range-row {
+    flex-direction: column;
+    align-items: flex-start
+}
+
+.range-label {
+    font-weight: 600;
+    margin-bottom: 6px
+}
+
+.range-control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.range-control input[type="range"] {
+    width: 100%;
+}
+
+.range-value {
+    min-width: 36px;
+    text-align: right;
+    display: inline-block
+}
+
+.reset-btn {
+    background: transparent;
+    color: #24323a;
+    border: 1px solid #e6e9ee;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background .12s ease, transform .08s ease, box-shadow .12s ease;
+}
+
+.reset-btn:hover {
+    background: #f3f6f9;
+    transform: translateY(-2px);
+}
+
+.reset-btn:active {
+    transform: translateY(0);
+}
+
+.reset-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+.style-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #0f1720;
     color: white;
-    border: 1px solid black;
-    padding: 5px;
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+    box-shadow: 0 2px 6px rgba(2, 6, 23, 0.08);
+    font-weight: 600;
+}
+
+.style-button .preview {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 96px;
+    height: 44px;
+    font-size: 18px;
+    padding: 0 10px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.06);
+    box-sizing: border-box;
+    line-height: 1;
+}
+
+.style-button .preview.black,
+.style-button .preview.white_arial {
+    background: #ffffff;
+    border: 1px solid #e6e9ee;
+    color: #0b1220;
+    box-shadow: none;
+}
+
+.style-button .preview.white_red {
+    background: #ffffff;
+    border: 1px solid #e6e9ee;
+    color: #ff3b30;
+}
+
+.style-button .preview.white_lime_green {
+    background: #ffffff;
+    border: 1px solid #e6e9ee;
+    color: #32cd32;
+}
+
+.style-button.black-txt .preview {
+    background: #ffffff;
+    border: 1px solid #e6e9ee;
+}
+
+.style-button .preview.black {
+    color: #0b1220;
+}
+
+.style-button .preview.white,
+.style-button .preview.red,
+.style-button .preview.lime_green,
+.style-button .preview.white_red,
+.style-button .preview.white_lime_green,
+.style-button .preview.black {
+    font-size: 18px;
+}
+
+.style-button .preview.classic_lcd {
+    font-size: 16px;
+}
+
+.style-button .preview.white_arial {
+    font-size: 17px;
+    font-family: Arial, sans-serif;
+}
+
+.style-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.12);
+}
+
+.style-button.lcd {
+    background: linear-gradient(180deg, #6e7a66, #4f5a46);
+    color: #fff;
+}
+
+.black-txt {
+    background: #fff;
+    color: #0b1220;
+    border: 1px solid #e6e9ee
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     cursor: pointer;
 }
+
+.toggle input {
+    display: none
+}
+
+.slider {
+    width: 44px;
+    height: 24px;
+    background: #d1d7df;
+    border-radius: 999px;
+    position: relative;
+    transition: all .18s ease
+}
+
+.slider:before {
+    content: '';
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    width: 18px;
+    height: 18px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(2, 6, 23, 0.15);
+    transition: all .18s ease
+}
+
+.toggle input:checked+.slider {
+    background: #2563eb
+}
+
+.toggle input:checked+.slider:before {
+    transform: translateX(20px)
+}
+
+.toggle-label {
+    font-weight: 600;
+    color: #24323a
+}
+
 .white {
     color: white;
     font-family: Digital;
     font-size: 30px;
 }
+
 .red {
     color: red;
     font-family: Digital;
     font-size: 30px;
 }
+
 .lime_green {
     color: limegreen;
     font-family: Digital;
     font-size: 30px;
 }
+
 .classic_lcd {
     color: #343334 !important;
     background-color: #7d8c76 !important;
     font-family: Digital;
     font-size: 30px;
 }
+
 .lcd {
     color: #343334 !important;
     background-color: #7d8c76;
 }
+
 .black-txt {
     color: black;
     background-color: white;
 }
+
 .black {
     color: black;
     font-family: Digital;
     font-size: 30px;
     background-color: white;
 }
+
 .white_red {
     color: red;
     font-family: Digital;
     font-size: 30px;
     background-color: white;
 }
+
 .white_lime_green {
     color: limegreen;
     font-family: Digital;
     font-size: 30px;
     background-color: white;
 }
+
 .white_arial {
     color: black;
     font-family: Arial;
